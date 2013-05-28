@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}{{item.title}}{% endblock %}
+
+{% block detail_content %}
+<div id="detail-content">
+    <div class="row-fluid">
+        <div class="span6">
+            <div id="header-title" class="detail-heading">
+                {{item.title}}
+            </div>
+        </div>
+        <div class="span6">
+            <div id="header-date" class="detail-item">
+                {{item.date}}
+            </div>
+        </div>
+    </div>
+
+{% block video %} {% endblock video %}
+
+
+{% if item.product %}
+<div class="row-fluid">
+    <div class="span4">
+        <div class="detail-heading">
+            Product
+        </div>
+    </div>    
+    
+    <div class="span6">
+        <div class="detail-item">
+            <a href="{{item.product}}" target="blank">
+                {{item.product}}
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if item.source %}
+<div class="row-fluid">
+    <div class="span4">
+        <div class="detail-heading">
+            Source
+        </div>
+    </div>    
+    
+    <div class="span6">
+        <div class="detail-item">
+            <a href="{{item.source}}" target="blank">
+                {{item.source}}
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if item.description %}
+<div class="row-fluid">
+    <div class="span4">
+        <div class="detail-heading">
+            Description
+        </div>
+    </div>    
+    
+    <div class="span6">
+        <div class="detail-item">
+            {{item.description}}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+
+{% for detail in item.textdetail_set.all %}
+<div class="row-fluid">
+    <div class="span4">
+        <div class="detail-heading">
+            {{detail.title}}
+        </div>
+    </div>    
+    
+    <div class="span6">
+        <div class="detail-item">
+        	{{detail.detail}}
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+{% block additional_content %} {% endblock %}
+
+</div>
+{% endblock %}

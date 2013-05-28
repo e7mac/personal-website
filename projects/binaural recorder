@@ -1,0 +1,25 @@
+VISION
+
+TECH DETAILS
+
+SCREENSHOT
+
+VIDEO
+
+UX
+
+Put the 4 input files in the input folder F/R-front/read L/R - left/right
+"input/FL.wav"
+"input/RL.wav"
+"input/RR.wav"
+"input/FR.wav"
+from the main directory, run 
+./chuck binaural4.ck recB.ck recBinaural.ck -s
+(currently its set to record about 90s, change that if needed in the recBinaural.ck file)
+You will get leftEar and rightEar files in the output directory, convert to stereo however you want.
+
+EVOLUTION
+
+SOURCE
+
+https://github.com/e7mac/Binaural-Creator

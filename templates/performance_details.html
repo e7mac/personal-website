@@ -1,0 +1,49 @@
+{% extends 'base_details.html' %}
+{% load listutil %}
+
+{% block video %}
+<div class="row-fluid">
+    <div class="span12" style="text-align:center">
+        <iframe class="youtube-player" type="text/html" width="640" height="385" src="{{item.link}}" frameborder="0">
+        </iframe>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block additional_content %}
+
+{% if item.projects.count %}
+<div class="row-fluid">
+    <div class="span4">
+        <div class="detail-heading">
+            Used
+        </div>
+    </div>        
+    <div class="span6">
+        <div class="detail-item">
+            {% for project in item.projects.all %}
+            <div id="photo">                    
+                <a href="/projects/{{project.title}}/?lightbox={{request.GET.lightbox}}">
+                <div id="picture">
+                    <div id="info">
+                        <div id="holder">
+                          <div id="note_count">
+                              {{project.title}}
+                          </div>
+                          <div id="month">
+                              {{project.short}}
+                          </div>
+                       </div>
+                   </div>
+                   <img src="/static/projects/{{project.title}}/thumbnail.png">
+                </div>
+                </a>
+            </div>            
+            {% endfor %}
+        </div>
+    </div>    
+</div>
+{% endif %}
+
+{% endblock %}

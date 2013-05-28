@@ -1,0 +1,27 @@
+VISION
+
+Given the physical nature of the iPad, I wanted to make a musical experience that would be as 'plastic' as possible. Doodling and humming seemed like interactions that everyone can do and I wanted to combine them into a music making experience.
+
+TECH DETAILS
+
+Soundshape uses MoAudio in addition to the standard Apple iOS libraries. It uses the GLKit to perform it's drawings and the UIKit for buttons. It also uses the AFNetworking library for uploading and downloading the songs, communicating with a Django backend.
+
+SCREENSHOT
+
+VIDEO
+
+UX
+
+The user can start drawing and the sounds that are made while drawing are captured in a "soundshape". A double-tap on any sound starts looping that sound. Scrubbing through the shape causes only those parts of the sound to be played back. 
+These sounds can be uploaded to the server and sounds created by other can be downloaded from the server by clicking on the appropriate buttons. 
+Each sound can also be played back with certain audio effects which are accessed by tapping the shape.
+
+EVOLUTION
+
+I started with the idea of making music-making 'plastic' and accessible to everyone. I was not crystal clear about all the details before I started. The interactions have been challenging as I have had to balance functionality with a clean and intuitive UI. I also thought of making it a networked 'instrument' - letting multiple people play but the canvas got very cluttered and it was not an experience I liked so I removed it. The playhead was another feature that I had implemented and then realized it wasn't contributing to the vision. 
+However, finally I settled on a balance of features and ease of use that I hope is the best for getting people to make music. Social experience is limited to sharing of sounds and I hope to extend that soon to complete pieces that people can record and upload.
+
+
+SOURCE
+
+http://www.github.com/e7mac/Soundshape

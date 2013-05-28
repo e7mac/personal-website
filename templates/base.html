@@ -1,0 +1,84 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>mayank | {% block title %}{{title}}{% endblock %}</title>
+        
+        <!-- Google Anaytics Code-->
+        		<script type="text/javascript">
+        		  var _gaq = _gaq || [];
+        		  _gaq.push(['_setAccount', 'UA-33182197-1']);
+        		  _gaq.push(['_trackPageview']);
+        		  (function() {
+        		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        		  })();
+        		</script>
+        <!-- END: Google Anaytics Code-->
+        
+        <!--CSS includes-->
+        <link rel="stylesheet" href="{% static "css/bootstrap.css" %}" type="text/css" />
+        <link href="http://fonts.googleapis.com/css?family=Raleway:100,300,500" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+        <!--JS includes-->
+        <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        
+        {% block head %}{% endblock %}
+
+        <!--custom CSS-->
+        <link rel="stylesheet" href="{% static "css/style.css" %}" type="text/css" />
+        <!--custom JS-->
+	</head>
+	<body>
+        <div class="container-narrow">
+            <section>      
+                {% if not request.GET.lightbox == "1" %}
+                
+                <script type="text/javascript">
+                    $("body").attr('id','main');
+                    // $(document).tooltip();
+                	$(document).ready(function() {
+                        $("#main-content").css("display", "none");
+                        $("#main-content").fadeIn(1000);
+                        
+                    	$("a.fadeout").click(function(event){
+                            if (!event.metaKey && !event.shiftKey) {   // allow open in new tab/window
+                                event.preventDefault();
+                        		linkLocation = this.href;
+                        		$("#main-content").fadeOut(500, function() {
+                        		window.location = linkLocation;
+                                    }
+                                );
+                            }
+                      });
+                }); 
+                </script>
+                    <div class="masthead">
+                        <ul class="nav nav-pills pull-right">                    
+                            <li {% if title == "projects" %}class="active"{% endif %}><a href="/projects/" title="sufficiently finished" class="fadeout">Projects</a></li>
+                            <li {% if title == "publications" %}class="active"{% endif %}><a href="/publications/" title="published research" class="fadeout">Publications</a></li>
+                            <li {% if title == "experiments" %}class="active"{% endif %}><a href="/experiments/" title="doodlings in code" class="fadeout">Experiments</a></li>
+                            <li {% if title == "performances" %}class="active"{% endif %}><a href="/performances/" title="with a public audience" class="fadeout">Performances</a></li>
+                            <li {% if title == "compositions" %}class="active"{% endif %}><a href="/compositions/" title="primarily created on paper" class="fadeout">Compositions</a></li>
+                            <li {% if title == "music" %}class="active"{% endif %}><a href="/music/" title="doodlings on guitar" class="fadeout">Recordings</a></li>
+                        </ul>
+                        <h1 class="muted"><a href="/">Mayank<br/>
+                             Sanganeria</a></h1>
+                    </div>
+                <div id="main-content">
+            {% else %}
+                <div>
+            {% endif %}
+                {% block detail_content %}{% endblock %}                
+                {% block content %}{% endblock %}
+            </div>
+            <div id="footer">
+                <!-- © 2013 Mayank Sanganeria -->
+            </div>
+            </section>
+        </div>
+    </div>
+   </body>
+</html>

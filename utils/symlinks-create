@@ -1,0 +1,3 @@
+sudo ln -fs /home/ubuntu/web/personal-website/server-config/nginx.conf /etc/nginx/sites-enabled/
+sudo ln -fs /home/ubuntu/web/personal-website/server-config/uwsgi.ini /etc/uwsgi/vassals/
+sudo ln -fs /home/ubuntu/web/personal-website/server-config/website_daemon.conf /etc/init/

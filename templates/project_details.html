@@ -1,0 +1,54 @@
+{% extends 'base_details.html' %}
+
+{% block video %}
+
+{% if item.video_set %}
+<div class="row-fluid">
+    <div class="span12" style="text-align:center">
+            {% for video in item.video_set.all %}
+            <iframe class="youtube-player" type="text/html" width="640" height="385" src="{{video.link}}" frameborder="0">
+            </iframe>
+            {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+
+{% block additional_content %}
+
+{% if item.performances.count %}
+<div class="row-fluid">
+    <div class="span4">
+        <div class="detail-heading">
+            Used In
+        </div>
+    </div>    
+    
+    <div class="span6">
+        <div class="detail-item">
+            {% for performance in item.performances.all %}
+                <div id="photo">                    
+                    <a href="/performances/{{performance.title}}/?lightbox={{request.GET.lightbox}}">
+                    <div id="picture">
+                        <div id="info">
+                            <div id="holder">
+                              <div id="note_count">
+                                  {{performance.title}}
+                              </div>
+                              <div id="month">
+                                  {{performance.short}}
+                              </div>
+                           </div>
+                       </div>
+                       <img src="/static/performances/{{performance.title}}/thumbnail.png">
+                    </div>
+                    </a>
+                </div>            
+            {% endfor %}
+        </div>
+    </div>    
+</div>
+{% endif %}
+{% endblock %}

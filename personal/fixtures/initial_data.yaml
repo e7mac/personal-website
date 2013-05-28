@@ -1,0 +1,743 @@
+#  PROJECTS #
+# ------------------------------------------------------------------------
+# --------BitBending-----------------
+- model: personal.gridlist
+  pk: 11000
+  fields:
+    date: 2012-11-28
+    title: BitBending
+    short: Circuit bending brought to software!
+
+- model: personal.project
+  pk: 11000
+  fields:
+        gridlist_id: 11000
+
+- model: personal.textdetail
+  pk: 11000
+  fields:
+      item: 11000
+      title: Vision
+      detail: Creating a software model for Circuit Bending, thus bringing back the technique in a scalable manner. Collaboration with Kurt Werner
+
+- model: personal.textdetail
+  pk: 11001
+  fields:
+      item: 11000
+      title: Technical Details
+      detail: Uses the Circuit Modeling library built in C++. Final product will be on different platforms, currently only exists as a VST plugin
+      
+- model: personal.video
+  pk: 11000
+  fields:
+    link: https://www.youtube.com/embed/56hzQMsKK3k
+    title: Demo video
+    item: 11000
+
+#-------------------------------------
+# --------Circuit Modeling Library-----------------
+- model: personal.gridlist
+  pk: 10900
+  fields:
+    date: 2012-09-28
+    title: Circuit Modeling
+    short: Circuit modeling in C++
+    source: http://github.com/e7mac/Chip-Library
+
+- model: personal.project
+  pk: 10900
+  fields:
+        gridlist_id: 10900
+
+- model: personal.textdetail
+  pk: 10900
+  fields:
+      item: 10900
+      title: Vision
+      detail: Circuit modeling library in C++
+
+- model: personal.textdetail
+  pk: 10901
+  fields:
+      item: 10900
+      title: Technical Details
+      detail: C++
+      
+- model: personal.textdetail
+  pk: 10902
+  fields:
+      item: 10900
+      title: Model
+      detail: Since we are interested in mangling the information while it is being transferred in between the 'Chip' modules, we stayed at the highest level possible - treating individual Chips as black boxes. Each Chip has an appropriate number of ChipInputs and ChipOutputs and can perform its calculation at the right time. Each Chip has a CLOCK and a RESET signal. On receiving a CLOCK, the Chip left-shifts the registers on its ChipInputs and pulls another bit into its ChipInput. On receiving a RESET, the Chip takes the value of the Registers on its ChipInputs, performs the right calculations, and puts the calculated value on its ChipOutputs
+      
+#-------------------------------------
+# --------DSP Library-----------------
+- model: personal.gridlist
+  pk: 10800
+  fields:
+    date: 2012-09-20
+    title: DSP Library
+    short: DSP for C++ projects
+    source: http://github.com/e7mac/DSP-Library
+
+- model: personal.project
+  pk: 10800
+  fields:
+      gridlist_id: 10800
+
+- model: personal.textdetail
+  pk: 10800
+  fields:
+      item: 10800
+      title: Vision
+      detail: Creating a simple DSP Library module that can be re-used in all the projects. Collaboration with Kurt Werner
+
+- model: personal.textdetail
+  pk: 10801
+  fields:
+      item: 10800
+      title: Technical Details
+      detail: C++
+
+#-----------------------------------
+# --------GrainProc-----------------
+
+- model: personal.gridlist
+  pk: 10700
+  fields:
+    date: 2012-09-28
+    title: GrainProc
+    short: Expressive granular synthesis for the performing musician
+    product: http://grainproc.e7mac.com
+
+- model: personal.project
+  pk: 10700
+  fields:
+      gridlist_id: 10700
+
+- model: personal.textdetail
+  pk: 10700
+  fields:
+      item: 10700
+      title: Vision
+      detail: Enabling performing musicians to use granular synthesis in a live setting with simple, intuitive controls. Collaboration with Kurt Werner
+
+- model: personal.textdetail
+  pk: 107001
+  fields:
+      item: 10700
+      title: Technical Details
+      detail: OpenGL ES, iOS
+
+
+- model: personal.textdetail
+  pk: 10702
+  fields:
+      item: 10700
+      title: UX
+      detail: The user plugs the guitar into the iPad through a 3rd party interface and fires up GrainProc. The parameters for the granular synthesis can be controlled through the interface elements on the iPad in realtime with toes or fingers
+
+- model: personal.video
+  pk: 10700
+  fields:
+    link: http://www.youtube.com/embed/_IWGfwVKqjA
+    title: Demo video
+    item: 10700
+#------------------------------------
+# --------MusicTraner-----------------
+
+- model: personal.gridlist
+  pk: 10600
+  fields:
+    date: 2012-08-01
+    title: MusicTraner
+    short: Organize your music education!
+    product: http://musictraner.e7mac.com
+
+- model: personal.project
+  pk: 10600
+  fields:
+    gridlist_id: 10600
+
+- model: personal.textdetail
+  pk: 10600
+  fields:
+      item: 10600
+      title: Vision
+      detail: It's so hard staying on top of all the material that is used for practicing music. Lead sheets, recordings, links, notes and concepts connecting them become so numerous and complex that making sense of it becomes a task in itself. I wanted to write a webapp to simplify this process.
+
+- model: personal.textdetail
+  pk: 10601
+  fields:
+      item: 10600
+      title: Technical Details
+      detail: MusicTraner uses a django backend to manage the databases and some simple front-end web design. Currently there is a Spotify API call to have a play button for the current tune but this might change to a different API in the future.
+
+- model: personal.textdetail
+  pk: 10602
+  fields:
+      item: 10600
+      title: UX
+      detail: The user simply uploads sheet music for every tune and connects them with concepts. Everything can be seen in a nice concise view and can be clicked through for more details on the concept/tune/resource.
+
+#------------------------------------
+# --------C-quencer-----------------
+
+- model: personal.gridlist
+  pk: 10500
+  fields:
+    date: 2012-06-06
+    title: C-quencer
+    source: http://github.com/e7mac/C-quencer
+    short: Realtime collaborative sequencer
+
+- model: personal.project
+  pk: 10500
+  fields:
+    gridlist_id: 10500
+      
+- model: personal.textdetail
+  pk: 10500
+  fields:
+      item: 10500
+      title: Vision
+      detail: Laptop orchestra presents the challenging problem of pleasing the audience, the composers and the performers with the same system.  The composers want control over the arc of the piece and the exploration of an idea that they find intriguing.
+      
+- model: personal.textdetail
+  pk: 10501
+  fields:
+      item: 10500
+      title: Audience
+      detail: The audience wants transparency and the reasonable demand of understanding what is going on without it being too obvious and uninteresting. To this end, there is a visualization on the screen showing the state of the system in real time.
+
+- model: personal.textdetail
+  pk: 10502
+  fields:
+      item: 10500
+      title: Performers
+      detail: The performers demand that the system require some creative input from them and that they feel that their presence changes the piece significantly. They are given complete control over the sounds that come out of their laptop and who they choose to connect to and collaborate with. The composers might guide the connections and parameters of sounds, but the performer is in complete control of his laptop
+      
+- model: personal.textdetail
+  pk: 10503
+  fields:
+      item: 10500
+      title: Composers
+      detail: The composers can define the overall arc of the piece by creating the sections in the score to have a specific number of connections and hence the density of the sounds. They also can hand pick the choice of sounds available to each performer. They are in control of the score display on each performer's GUI through the server controls and can even manually override the density by changing the global tempo
+
+- model: personal.textdetail      
+  pk: 10501
+  fields:
+      item: 10500
+      title: Technical Details
+      detail: The networking scripts use OSC and are written in ChucK. The visualizer is made in OpenGL. The GUI for the performers is made as a Max/MSP runtime script.
+
+#-------------------------------------    
+# --------Soundshape-----------------
+
+- model: personal.gridlist
+  pk: 10400
+  fields:
+    date: 2012-04-08
+    title: Soundshape
+    short: Hum and doodle to play!
+    source: http://github.com/e7mac/Soundshape
+
+- model: personal.project
+  pk: 10400
+  fields:
+    gridlist_id: 10400
+      
+- model: personal.textdetail
+  pk: 10400
+  fields:
+      item: 10400
+      title: Vision
+      detail: Given the physical nature of the iPad, I wanted to make a musical experience that would be as 'plastic' as possible. Doodling and humming seemed like interactions that everyone can do and I wanted to combine them into a music making experience. Made in collaboration with Hunter McCurry and Jiffer Harriman
+      
+- model: personal.textdetail      
+  pk: 10401
+  fields:
+      item: 10400
+      title: Technical Details
+      detail: Soundshape uses MoAudio in addition to the standard Apple iOS libraries. It uses the GLKit to perform it's drawings and the UIKit for buttons. It also uses the AFNetworking library for uploading and downloading the songs, communicating with a Django backend
+      
+- model: personal.textdetail
+  pk: 10402
+  fields:
+      item: 10400
+      title: UX
+      detail: The user can start drawing and the sounds that are made while drawing are captured in a "soundshape". A double-tap on any sound starts looping that sound. Scrubbing through the shape causes only those parts of the sound to be played back. These sounds can be uploaded to the server and sounds created by other can be downloaded from the server by clicking on the appropriate buttons. Each sound can also be played back with certain audio effects which are accessed by tapping the shape
+    
+- model: personal.video
+  pk: 10400
+  fields:
+    link: http://www.youtube.com/embed/4kIYk7sSmyo
+    title: Presentation
+    item: 10400
+
+#-------------------------------------    
+# --------SonicCanvas-----------------
+
+- model: personal.gridlist
+  pk: 10300
+  fields:
+    date: 2012-04-05
+    title: SonicCanvas
+    short: Paint with your voice!
+    source: http://github.com/e7mac/SonicCanvas
+
+- model: personal.project
+  pk: 10300
+  fields:
+    gridlist_id: 10300
+
+- model: personal.textdetail
+  pk: 10300
+  fields:
+      item: 10300
+      title: Vision
+      detail: I wanted to create an experience of painting with your voice - the experience needed to make some sense but it needed to be balanced with a visually pleasing final product
+
+- model: personal.textdetail
+  pk: 10301
+  fields:
+      item: 10300
+      title: Technical Details
+      detail: The complete project is made in Processing. For audio in Processing, I used the minim library
+
+- model: personal.textdetail
+  pk: 10302
+  fields:
+      item: 10300
+      title: UX
+      detail: The user can control a paintbrush on the screen by modifying parameters volume and pitch (actually implemented as the frequency centroid). There are also sonic boxes on the screen created using content taken as audio input to create a Mondrian-like feel
+
+#-----------------------------------
+# --------diffuse10-----------------
+
+- model: personal.gridlist
+  pk: 10200
+  fields:
+    date: 2011-12-07
+    title: diffuse10
+    short: 8 channel live diffusion
+    source: http://github.com/e7mac/diffuse10
+
+- model: personal.project
+  pk: 10200
+  fields:
+    gridlist_id: 10200
+    
+- model: personal.textdetail
+  pk: 10200
+  fields:
+      item: 10200
+      title: Vision
+      detail: I wondered about the process of writing music in 8 channels. It is going to be very different from writing even stereo music as there are so many more dimensions to think of. I wanted to facilitate the exploration of 8 channel music creation and recording
+
+- model: personal.textdetail
+  pk: 10201
+  fields:
+      item: 10200
+      title: Technical Details
+      detail: The GUI is in Processing using the OSCpack and Control Libraries. The 8 channel audio routing is done through ChucK. Communication between the 2 scripts are handled through osc messages
+
+- model: personal.textdetail      
+  pk: 10202
+  fields:
+      item: 10200
+      title: UX
+      detail: diffuse10 allows the user to load loops and then control the spatialization of that loop's sound by simply clicking inside a polygon. The polygon represents the space inside an 8-channel environment where each vertex represents a speaker. The user can also switch loops off, control the levels of different loops and also apply either a pan8 or a drunkenWalk effect. Pan8 makes the sound move circularly and drunkenWalk makes the sound move randomly inside the 8-channel space
+      
+#-------------------------------------
+# --------Miles Ahead-----------------
+- model: personal.gridlist
+  pk: 10100
+  fields:
+    date: 2011-12-08
+    title: MilesAhead
+    short: Software that improvises with you
+    source: http://github.com/e7mac/Miles-Ahead
+
+- model: personal.project
+  pk: 10100
+  fields:
+      gridlist_id: 10100
+      
+- model: personal.textdetail
+  pk: 10100
+  fields:
+      item: 10100
+      title: Vision
+      detail: Global distances and busy schedules have made it harder than ever before to get together and have some improvisational jams with friends. Backing tracks have made it easier to practice improvisation alone, but it gets stale without any external input of ideas. The vision for milesAhead was to create a system that would feed off your phrases and take you down newer paths and hence keep the improvisation session fresher for longer
+
+- model: personal.textdetail
+  pk: 10101
+  fields:
+      item: 10100
+      title: Technical Details
+      detail: milesAhead uses RtAudio, RtMidi, OpenGL and FluidSynth libraries. The user's MIDI inputs are captured, shuffled around using certain parameters and then the new phrases are played back - hence recreating the experience of trading 4's
+
+- model: personal.textdetail
+  pk: 10102
+  fields:
+      item: 10100
+      title: UX
+      detail: The user would usually have a set of backing tracks that he likes to play over in various formats - midi, mp3, videos. To keep the system simple, the user can simply 'sync' the milesAhead metronome with the backing track. For this, first the tempo is set using the appropriate buttons on the GUI, the number of bars that are to be traded is set and then 'sync' is pressed on beat 1 of the backing track. The internal metronome is simplistic and can be turned off while playing with the backing track. The parameters for variation of the rhythm and melody that the computer plays back can be set using the appropriate buttons
+    
+- model: personal.video
+  pk: 10100
+  fields:
+    link: http://www.youtube.com/embed/1oIgkbJhK6A
+    item: 10100
+    title: Demo
+
+#--------------------------------
+# --------Spark-----------------
+
+- model: personal.gridlist
+  pk: 10000
+  fields:
+    date: 2011-12-02
+    title: Spark
+    short: Design project
+
+
+- model: personal.project
+  pk: 10000
+  fields:
+      gridlist_id: 10000
+
+- model: personal.textdetail
+  pk: 10000
+  fields:
+      item: 10000
+      title: Vision
+      detail: Engaging consumers of digital media to gain empathy for them. Uncovering useful insights by seeking to understand their perspectives toward, behaviors around, and underlying needs relating to social interaction and digital media. Developing a framework that reveals barriers and opportunities in this space and articulating a clear, meaningful point-of-view. Creating prototypes of solutions to spur conversations with users
+     
+- model: personal.textdetail      
+  pk: 10001
+  fields:
+      item: 10000
+      title: Technical Details
+      detail: Design process - empathize, define, ideate, prototype, test and repeat
+      
+- model: personal.video
+  pk: 10000
+  fields:
+    link: http://www.youtube.com/embed/0jMwflVYbbA
+    item: 10000
+    title: Final Presentation
+
+
+# ------------------------------------------------------------------------
+# PERFORMANCES #
+# ------------------------------------------------------------------------
+
+- model: personal.gridlist
+  pk: 20500
+  fields:
+    title: Shimmering Horizons
+    short: First piece with GrainProc for 2 guitars and 2 iPads
+    date: 2012-09-28
+    description: First piece for GrainProc with Kurt Werner at CCRMA Transitions
+    
+- model: personal.performance
+  pk: 20500
+  fields:
+    link: http://www.youtube.com/embed/onjk3foxVlc
+    projects: [10700]
+#-----------------------------------------
+
+- model: personal.gridlist
+  pk: 20400
+  fields:
+    title: Tiki Taka
+    short: Multi-channel tape with live diffusion
+    date: 2012-09-28
+    description: First electronic piece at CCRMA Transitions    
+    
+- model: personal.performance
+  pk: 20400
+  fields:
+    link: http://www.youtube.com/embed/vdRpRaM_pMA
+    projects: [10200]
+
+#-----------------------------------------
+
+- model: personal.gridlist
+  pk: 20300
+  fields:
+    title: Sparks
+    short: Slork Concert
+    date: 2012-06-06    
+    description: Slork Final concert performance with Hunter McCurry and Jiffer Harriman at Dinkelspiel Auditorium
+
+- model: personal.performance
+  pk: 20300
+  fields:
+    link: http://www.youtube.com/embed/q9srwrBUQ88
+    projects: [10500]
+
+#-----------------------------------------
+    
+- model: personal.gridlist
+  pk: 20200
+  fields:
+    title: Meeting of the Minds
+    short: Slork Chamber Music
+    date: 2012-05-03    
+    description: Slork chamber music performance with Dan Preston and Kevin Chau at CCRMA Stage
+    
+- model: personal.performance
+  pk: 20200
+  fields:
+    link: http://www.youtube.com/embed/E9u0irrKXlM
+
+#-----------------------------------------
+
+- model: personal.gridlist
+  pk: 20100
+  fields:
+    title: Softly As In A Morning Sunrise
+    short: Open Mic Night
+    date: 2012-03-01
+    description: Cover of jazz standard with Hunter McCurry and Kurt Werner at GCC
+    
+- model: personal.performance
+  pk: 20100
+  fields:
+    link: http://www.youtube.com/embed/dAuhyR4XYYU
+
+#-----------------------------------------
+
+- model: personal.gridlist
+  pk: 20000
+  fields:
+    title: Minor Swing
+    short: Open Mic Night
+    date: 2012-03-01
+    description: Cover of Django Reinhardt's classic tune with Hunter McCurry and Kurt Werner at GCC
+            
+- model: personal.performance
+  pk: 20000
+  fields:
+    link: http://www.youtube.com/embed/neXEmoEm158
+    
+#-----------------------------------------
+        
+
+        
+# ------------------------------------------------------------------------
+# EXPERIMENTS #
+# ------------------------------------------------------------------------
+- model: personal.gridlist
+  pk: 30300
+  fields:
+    title: Faust Granulator
+    short: Granulator in Faust
+    date: 2012-12-07
+    source: https://github.com/e7mac/faust-code/blob/master/granulator.dsp
+    description: The idea was to make a granulator in pur Faust. It was interesting to implement granular synthesis in a purely block diagram manner.
+            
+- model: personal.experiment
+  pk: 30300
+  fields:
+      gridlist_id: 30300
+#-----------------------------------------        
+- model: personal.gridlist
+  pk: 30200
+  fields:
+    title: Faust Experiments
+    short: Experiments in Faust
+    date: 2012-12-07
+    source: https://github.com/e7mac/faust-code/
+    description: Learning faust while building stuff
+            
+- model: personal.experiment
+  pk: 30200
+  fields:
+      gridlist_id: 30200
+#-----------------------------------------        
+
+- model: personal.gridlist
+  pk: 30100
+  fields:
+    date: 2012-05-15
+    title: Rhythmator
+    short: Live breakbeats!
+    source: http://github.com/e7mac/Stanford/tree/master/128/hw2
+
+- model: personal.experiment
+  pk: 30100
+  fields:
+      gridlist_id: 30100
+
+#-----------------------------------------
+- model: personal.gridlist
+  pk: 30000
+  fields:
+    date: 2012-05-01
+    title: Boom-a-rang
+    short: Feedback madness from hemis
+    source: http://github.com/e7mac/Stanford/blob/master/128/hw1/boomarang.ck
+
+- model: personal.experiment
+  pk: 30000
+  fields:
+      gridlist_id: 30000
+      
+#-----------------------------------------
+    
+          
+# ------------------------------------------------------------------------      
+# COMPOSITIONS #
+# ------------------------------------------------------------------------
+- model: personal.gridlist
+  pk: 40500
+  fields:
+    title: Another Time
+    short: Time of confusion
+    date: 2012-03-01
+            
+- model: personal.composition
+  pk: 40500
+  fields:
+      gridlist_id: 40500
+
+#-----------------------------------------
+      
+- model: personal.gridlist
+  pk: 40400
+  fields:
+    title: Recordame Solo
+    short: Joe Henderson Tune
+    date: 2012-03-01
+        
+- model: personal.composition
+  pk: 40400
+  fields:
+      gridlist_id: 40400
+
+#-----------------------------------------
+      
+- model: personal.gridlist
+  pk: 40300
+  fields:
+    title: Nardis Solo
+    short: Miles Davis Tune
+    date: 2012-03-01
+        
+- model: personal.composition
+  pk: 40300
+  fields:
+      gridlist_id: 40300
+
+#-----------------------------------------
+      
+- model: personal.gridlist
+  pk: 40200
+  fields:
+    title: Will not
+    short: Uncertainty
+    date: 2012-03-01
+        
+- model: personal.composition
+  pk: 40200
+  fields:
+      gridlist_id: 40200
+
+#-----------------------------------------
+      
+- model: personal.gridlist
+  pk: 40100
+  fields:
+    title: Angel Eyes Solo
+    short: Matt Dennis Tune
+    date: 2012-03-01
+        
+- model: personal.composition
+  pk: 40100
+  fields:
+      gridlist_id: 40100
+
+#-----------------------------------------
+      
+- model: personal.gridlist
+  pk: 40000
+  fields:
+    title: Untitled
+    short: Trying things out
+    date: 2012-03-01
+        
+- model: personal.composition
+  pk: 40000
+  fields:
+      gridlist_id: 40000
+#-----------------------------------------
+
+# ------------------------------------------------------------------------
+# INSTALLATIONS # 
+# ------------------------------------------------------------------------
+# - model: personal.gridlist
+#   pk: 11000
+#   fields:
+#     title: Modulations
+#     short: CellSpace at SF
+#     date: 2012-04-28
+# 
+# - model: personal.installation
+#   pk: 11000
+#   fields:
+#       project: 1000
+# 
+# 
+# - model: personal.gridlist
+# pk: 12000
+#   fields:
+#     title: Art After Dark
+#     short: Stanford
+#     date: 2012-05-17
+# 
+# - model: personal.installation
+#   pk: 12000
+#   fields:
+#       project: 1000
+
+# ------------------------------------------------------------------------
+# PUBLICATIONS #
+# ------------------------------------------------------------------------
+
+- model: personal.gridlist
+  pk: 50000
+  fields:
+    title: GrainProc
+    short: A real-time granular synthesis interface for live performance
+    date: 2013-05-28
+    description: GrainProc is a touchscreen interface for real-time granular synthesis designed for live performance. The user provides a real-time audio input (electric guitar, for example) as a granularization source and controls various synthesis parameters with their fingers or toes. The control parameters are designed to give the user access to intuitive and expressive live granular manipulations.
+    source: http://nime2013.kaist.ac.kr
+    
+- model: personal.publication
+  pk: 50000
+  fields:
+    gridlist_id: 50000
+    conference: 13th International Conference on New Interfaces for Musical Expression, NIME, Daejeon + Seoul, Korea Republic
+    project: 10700
+#-----------------------------------------
+- model: personal.gridlist
+  pk: 50100
+  fields:
+    title: Bit Bending
+    short: An introduction
+    date: 2013-09-02
+    description: We introduce the technique of "Bit Bending," a particularly fertile technique for circuit bending which involves short circuits and manipulations upon digital serial information. We present a justification for computer modeling of circuit-bent instruments, with deference to the movement's aversion to "theory-true" design and associations with chance discovery. To facilitate software modeling of Bit Bending, we also present a software library for modeling certain classes of digital integrated circuits. A synthesis architecture case study (frequency modulation via numerically controlled oscillators) demonstrates software modeling of Bit Bending in action.
+    source: http://dafx13.nuim.ie
+    
+- model: personal.publication
+  pk: 50100
+  fields:
+    gridlist_id: 50100
+    conference: 16th International Conference on Digital Audio Effects, DAFx-13, Maynooth, Ireland
+    project: 11000
+
+#-----------------------------------------

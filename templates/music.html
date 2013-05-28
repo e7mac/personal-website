@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/sc-player-standard.css" type="text/css" />
+{% endblock %}
+
+
+{% block content %}
+  <div class="row">
+    <div class="span11">
+        <div id="music-player">
+            <a href="http://soundcloud.com/e7mac" class="sc-player">My tracks</a>
+            <script type="text/javascript" src="/static/js/soundcloud.player.api.js"></script>
+            <script type="text/javascript" src="/static/js/sc-player.js"></script>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

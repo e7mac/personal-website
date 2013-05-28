@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load listutil %}
+{% load staticfiles %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/jquery.fancybox.css" %}" type="text/css" media="screen" />
+<script type="text/javascript" src="{% static "js/jquery.fancybox.pack.js" %}"></script>        
+<script type="text/javascript" src="{% static "js/caman.full.min.js" %}"></script>        
+
+<script type="text/javascript">
+	$(document).ready(function() {
+        $(".fancybox")
+            .attr('rel', 'gallery')
+            .fancybox({
+                openEffect: 'elastic',
+                closeEffect: 'elastic',
+                openSpeed: 250,
+                closepeed: 250,
+                padding  : 0,
+            });
+            //light box code
+        $("a.grid-item").click( function (event) {
+            if (!event.metaKey && !event.shiftKey) {    //allow opening in new tab and window
+               event.preventDefault();
+                $('#'+this.name).click();
+            }
+            
+            // Caman('.grid-image', function () {
+            //   this.brightness(10);
+            //   this.contrast(30);
+            //   this.sepia(60);
+            //   this.saturation(-30);
+            //   this.render();
+            // });
+        });
+            
+});
+</script>		
+{% endblock %}
+
+{% block content %}
+{% for item in items %}
+<a class="fancybox fancybox.iframe" href="/{{title}}/{{item.title}}/?lightbox=1" title="{{item.title}}" id="{{item.title|cut:' '}}"></a>
+{% endfor %}
+
+<div class="row-fluid">
+    {% for item_list in items|partition_horizontal:"3" %}
+        <div class="span4">
+        {% for item in item_list %}
+        <div class="grid-item">
+                <div id="photo">
+                    <a class="grid-item" href="/{{title}}/{{item.title}}/" name="{{item.title|cut:' '}}">
+                    <div id="picture">
+                        <div id="info">
+                            <div id="holder">
+                              <div id="grid-item-title">
+                                  {{item.title}}
+                              </div>
+                              <div id="grid-item-short">
+                                  {{item.short}}
+                              </div>
+                            </div>
+                        </div>
+                        <img src="/static/{{title}}/{{item.title}}/thumbnail.png" class="grid-image">
+                    </div>
+                    </a>
+                </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+
