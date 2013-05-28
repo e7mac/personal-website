@@ -6,6 +6,8 @@ from django.conf import global_settings
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
+ALLOWED_HOSTS = ['*']
+
 ADMINS = (
     ('Mayank Sanganeria', 'mayank.ot@gmail.com'),
 )
