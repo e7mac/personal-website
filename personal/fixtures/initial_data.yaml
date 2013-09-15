@@ -29,12 +29,12 @@
       detail: bent.fm lite is a model of a circuit-bent synthesizer. bent.fm allows the user to tweak classic circuit bending modifications like fine and octave-decimated clock bends, and experiment with more esoteric bends. Circuit-bent distortions and algorithmic sequences can be created by (im)proper connections on the bend matrix. Reroute digital serial information through the base chip set (a numerically controlled oscillator) and extra logic gates (NAND and XOR, binary counters), and experience architecture-level bit crushing. For anyone interested in circuit bending, glitch sounds, industrial music, and post-procedural art.
 
       
-# - model: personal.video
-#   pk: 11000
-#   fields:
-#     link: https://www.youtube.com/embed/56hzQMsKK3k
-#     title: Demo video
-#     item: 11000
+- model: personal.video
+  pk: 11100
+  fields:
+    link: https://www.youtube.com/embed/EEY_LwWgcSY
+    title: Demo video
+    item: 11100
 
 #-------------------------------------
 
